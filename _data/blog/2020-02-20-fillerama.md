@@ -2,49 +2,69 @@
 template: BlogPost
 path: /fillerama
 date: 2020-02-20T14:59:36.571Z
-title: Dummy Content from Fillerama
-thumbnail: /assets/image-5.jpg
+title: Servlet＆JSP　アプリケーション
+thumbnail: /assets/b491d3e887edbbf140889322d3f1b2ca.jpg
 ---
-# No, I'll fix it. I'm good at fixing rot. Call me the Rotmeister. No, I'm the Doctor. Don't call me the Rotmeister.
+# アプリケーション情報
+---
+作成期間：2020/5/18~2020/5/22
+### 接続先情報
 
-I am the Doctor, and you are the Daleks! You hit me with a cricket bat. You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better? You hit me with a cricket bat.
+#### URL: https://posters-test.herokuapp.com/IndexServlet 
 
-You've swallowed a planet! No… It's a thing; it's like a plan, but with more greatness. You hate me; you want to kill me! Well, go on! **Kill me!** *KILL ME!* Sorry, checking all the water in this area; there's an escaped fish.
+(PaaS herokuを利用。 DBと連携していないためログインはできません。）
 
-## Did I mention we have comfy chairs?
+---
+### 開発環境(言語、ツール、OS、DB、サーバー）
+言語：Java, Servlet, JSP, HTML/CSS
 
-No… It's a thing; it's like a plan, but with more greatness. Annihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming Storm - and you basically meant beat them in a football match, didn't you?
+ツール：Eclipse
 
-1. \*Insistently\* Bow ties are cool! Come on Amy, I'm a normal bloke, tell me what normal blokes do!
-2. Sorry, checking all the water in this area; there's an escaped fish.
-3. Father Christmas. Santa Claus. Or as I've always known him: Jeff.
+OS: Windows
 
-### I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship.
+DB: H2 （ローカル環境）
 
-It's a fez. I wear a fez now. Fezes are cool. You know how I sometimes have really brilliant ideas? You know how I sometimes have really brilliant ideas? Sorry, checking all the water in this area; there's an escaped fish.
+---
 
-* I am the last of my species, and I know how that weighs on the heart so don't lie to me!
-* You hit me with a cricket bat.
-* You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better?
+### Githubリポジトリ
+https://github.com/taka1127/Posters
 
-I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship.
+--- 
+### 投稿サイト「 Postersポスターズ」の要件
 
-It's a fez. I wear a fez now. Fezes are cool. The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant.
+#### ① ログイン機能
+・アプリケーションにログインする。
+・ユーザーIDとパスワードの入力によりユーザー認証を行う。
+・ユーザーは登録されている必要がある。
 
-You know how I sometimes have really brilliant ideas? Annihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming Storm - and you basically meant beat them in a football match, didn't you?
+#### ② ユーザー登録機能
+・ユーザーの登録を行う。
+・登録する情報は：ユーザーID、ユーザー名、パスワード、メールアドレス。
 
-You've swallowed a planet! They're not aliens, they're Earth…liens! You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better?
+#### ③ 投稿機能
+・ログインしているユーザーは投稿できる。
 
-Father Christmas. Santa Claus. Or as I've always known him: Jeff. \*Insistently\* Bow ties are cool! Come on Amy, I'm a normal bloke, tell me what normal blokes do! No… It's a thing; it's like a plan, but with more greatness.
+・投稿する情報は：タイトル、 メッセージ 。
 
-\*Insistently\* Bow ties are cool! Come on Amy, I'm a normal bloke, tell me what normal blokes do! You've swallowed a planet! I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why.
+・タイトル、 メッセージは必ず投稿。
 
-It's art! A statement on modern society, 'Oh Ain't Modern Society Awful?'! All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? Saving the world with meals on wheels.
+#### ④ 閲覧機能
+・ログインしているユーザーは投稿を閲覧できる。
 
-You've swallowed a planet! Heh-haa! Super squeaky bum time! All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better?
+#### ⑤ 詳細 表示 機能
 
-No… It's a thing; it's like a plan, but with more greatness. It's a fez. I wear a fez now. Fezes are cool. You hate me; you want to kill me! Well, go on! Kill me! KILL ME! Saving the world with meals on wheels.
+・詳細ページを表示できる。
 
-You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying to make you feel better? Sorry, checking all the water in this area; there's an escaped fish. You hit me with a cricket bat.
+#### ⑥ 削除機能
+・ログインユーザー が投稿した記事 のみ を削除できる。
+・内容:日常の感じたことや出来事をメッセージにて投稿し日記のように綴っていくアプリケーションです。
+---
+![テーブル設計図](/assets/0f90e1dc85bb9b73fe0f4a4fc4e0bf43.png) 
 
-Did I mention we have comfy chairs? Stop talking, brain thinking. Hush. No, I'll fix it. I'm good at fixing rot. Call me the Rotmeister. No, I'm the Doctor. Don't call me the Rotmeister. You know how I sometimes have really brilliant ideas?
+
+![画面遷移図](/assets/1ef0bde87cc9610eb351e3bc0ad93174.png) 
+---
+
+## 企画背景
+ServletとJSPを学習し、そのアウトプットとして作成しました。
+現在はSpring bootの開発を目標にしておりJavaのWeb開発の根源であるServletを理解しWeb開発の理解を深め、Spring bootの開発に役立てればと思い作成しました。

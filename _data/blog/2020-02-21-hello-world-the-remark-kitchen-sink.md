@@ -2,453 +2,131 @@
 template: BlogPost
 path: /remark-kitchen-sink
 date: 2020-02-21T12:12:25.364Z
-title: 'Hello World: The remark Kitchen Sink'
-thumbnail: /assets/image-6.jpg
+title: フリマ―ケットアプリケーション
+thumbnail: /assets/3f6cd68f3c962a78513119e873700356.jpg
 ---
-# h1 Heading 8-)
+# アプリケーション情報
+---
+### 接続先情報
 
-## h2 Heading
+#### URL http://18.177.99.221/
+---
+### ID/Pass
+ID: 66_mercari_a
 
-### h3 Heading
+Pass: 66a
 
-#### h4 Heading
+---
 
-##### h5 Heading
+### Githubリポジトリ
+https://github.com/taka1127/free_market_app
+開発状況
 
-###### h6 Heading
+---
 
-## Horizontal Rules
+## 各担当箇所の詳細
+● DB設計
 
-- - -
+○ 概要
 
-- - -
+■ 必要なテーブル、カラムの選定。アソシエーションの決定。
 
-- - -
+○ 担当内容
 
-## Typographic replacements
+■ ER図の作成
 
-Enable typographer option to see result.
+■ 各テーブルの作成
 
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+■ モデルへのアソシエーションの記述
 
-test.. test... test..... test?..... test!....
+● ユーザーマイページ関連（マイページ、プロフィールページ、本人確認ページ、支払い
+方法ページ、ログアウトページ）
 
-!!!!!! ???? ,,  -- ---
+○ 概要
 
-"Smartypants, double quotes" and 'single quotes'
+■ ログインしたユーザーが利用する本人情報についてのページ
 
-## Emphasis
+○ 担当内容（バックエンド）
 
-**This is bold text**
+■ マイページ用のコントローラを作成し、ルーティングを設定しました。
+マイページの各ページへの遷移ではログインしていないユーザーはペー
+ジに遷移できないように各ページのアクションで設定しました。
 
-**This is bold text**
+■ 本人確認ページでは住所を変更できるようにしました。
 
-*This is italic text*
+■ プロフィールページではプロフィールの変更・修正ができるようにしま
+した。
 
-*This is italic text*
+○ 担当内容（フロントエンド）
 
-~~Strikethrough~~
+■ haml,scss,javascriptを使用しトップページのマークアップ作業を行いま
+した。タブ切り替えの実装を行いました。
 
-## Blockquotes
+● ウィザード形式によるユーザー新規登録
 
-> Blockquotes can also be nested...
->
-> > ...by using additional greater-than signs right next to each other...
-> >
-> > > ...or with spaces between arrows.
+○ 概要
 
-## Lists
+■ 対話形式によるユーザー新規登録機能
 
-Unordered
+○ 担当内容（バックエンド）
 
-* Create a list by starting a line with `+`, `-`, or `*`
-* Sub-lists are made by indenting 2 spaces:
+■ 対話形式に登録が進行するようにコントローラ、ルーティングの作成を
+しました。
 
-  * Marker character change forces new list start:
+■ sessionを利用し、各ページの情報を保管、ユーザーと住所の情報が問題
+なく入力され保存された場合にのみ登録完了ページに遷移するように条
+件分岐をしました。
 
-    * Ac tristique libero volutpat at
-    * Facilisis in pretium nisl aliquet
-    * Nulla volutpat aliquam velit
-* Very easy!
+■ 登録がうまくいかなかった場合は、再度新規登録ページに遷移し登録が
+できなかったflashメッセージを設定しました。また、ログイン、ログア
+ウトができたかをわかりやすくするためにトップページにログイン完
+了、ログアウト完了のflashメッセージを設定しました。
 
-Ordered
+● デプロイ
 
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-4. You can use sequential numbers...
-5. ...or keep all the numbers as `1.`
+○ 概要
 
-Start numbering with offset:
+■ AWSによる、S3の設定。EC2インスタンスの作成をし、 Capistranoを利
+用した自動デプロイを担当。
 
-57. foo
-58. bar
+○担当内容
 
-## Code
+■ デプロイ時のエラーが発生した場合、ログを確認し該当箇所のエラー修
+正を行ったり、本番環境のDBの確認を行い、ローカル環境との相違がな
+いかを確認していました。
 
-Inline `code`
+###　開発を通じて得られた知見
 
-Indented code
+#### 工夫した点
 
-```
-// Some comments
-line 1 of code
-line 2 of code
-line 3 of code
-```
-
-Block code "fences"
-
-```
-Sample text here...
-```
-
-Syntax highlighting
-
-```js
-var foo = function (bar) {
-  return bar++;
-};
-
-console.log(foo(5));
-```
-
-## Tables
-
-| Option | Description                                                               |
-| ------ | ------------------------------------------------------------------------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default.    |
-| ext    | extension to be used for dest files.                                      |
-
-Right aligned columns
-
-| Option | Description                                                               |
-| ------ | ------------------------------------------------------------------------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default.    |
-| ext    | extension to be used for dest files.                                      |
-
-## Links
-
-[link text](http://dev.nodeca.com)
-
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
-
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
-
-## Images
-
-![Minion](https://octodex.github.com/images/minion.png) ![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-
-Like links, Images also have a footnote style syntax
-
-![Alt text](https://octodex.github.com/images/dojocat.jpg "The Dojocat")
-
-With a reference later in the document defining the URL location:
-
-## Plugins
-
-The killer feature of `markdown-it` is very effective support of [syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
-
-### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
-
-> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
->
-> Shortcuts (emoticons): :-) :-( 8-) ;)
-
-see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
-
-### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
-
-* 19^th^
-* H\~2\~O
-
-### [<ins>](https://github.com/markdown-it/markdown-it-ins)
-
-++Inserted text++
-
-### [<mark>](https://github.com/markdown-it/markdown-it-mark)
-
-\==Marked text==
-
-### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
-
-Footnote 1 link\[^first].
-
-Footnote 2 link\[^second].
-
-Inline footnote^\[Text of inline footnote] definition.
-
-Duplicated footnote reference\[^second].
-
-\[^first]: Footnote **can have markup**
-
-```
-and multiple paragraphs.
-```
-
-\[^second]: Footnote text.
-
-### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
-
-Term 1
-
-:   Definition 1 with lazy continuation.
-
-Term 2 with *inline markup*
-
-:   Definition 2
-
-```
-    { some code, part of Definition 2 }
-
-Third paragraph of definition 2.
-```
-
-*Compact style:*
-
-Term 1   ~ Definition 1
-
-Term 2   \~ Definition 2a
-  \~ Definition 2b
-
-### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
-
-This is HTML abbreviation example.
-
-It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
-
-\*\[HTML]: Hyper Text Markup Language
-
-### [Custom containers](https://github.com/markdown-it/markdown-it-container)
-
-::: warning *here be dragons* :::---
-**Advertisement :)**
-
-* **[pica](https://nodeca.github.io/pica/demo/)** - high quality and fast image resize in browser.
-* **[babelfish](https://github.com/nodeca/babelfish/)** - developer friendly i18n with plurals support and easy syntax.
-
-You will like those projects!
-
-- - -
-
-# h1 Heading 8-)
-
-## h2 Heading
-
-### h3 Heading
-
-#### h4 Heading
-
-##### h5 Heading
-
-###### h6 Heading
-
-## Horizontal Rules
-
-- - -
-
-- - -
-
-- - -
-
-## Typographic replacements
-
-Enable typographer option to see result.
-
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
-
-test.. test... test..... test?..... test!....
-
-!!!!!! ???? ,,  -- ---
-
-"Smartypants, double quotes" and 'single quotes'
-
-## Emphasis
-
-**This is bold text**
-
-**This is bold text**
-
-*This is italic text*
-
-*This is italic text*
-
-~~Strikethrough~~
-
-## Blockquotes
-
-> Blockquotes can also be nested...
->
-> > ...by using additional greater-than signs right next to each other...
-> >
-> > > ...or with spaces between arrows.
-
-## Lists
-
-Unordered
-
-* Create a list by starting a line with `+`, `-`, or `*`
-* Sub-lists are made by indenting 2 spaces:
-
-  * Marker character change forces new list start:
-
-    * Ac tristique libero volutpat at
-    * Facilisis in pretium nisl aliquet
-    * Nulla volutpat aliquam velit
-* Very easy!
-
-Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-4. You can use sequential numbers...
-5. ...or keep all the numbers as `1.`
-
-Start numbering with offset:
-
-57. foo
-58. bar
-
-## Code
-
-Inline `code`
-
-Indented code
-
-```
-// Some comments
-line 1 of code
-line 2 of code
-line 3 of code
-```
-
-Block code "fences"
-
-```
-Sample text here...
-```
-
-Syntax highlighting
-
-```js
-var foo = function (bar) {
-  return bar++;
-};
-
-console.log(foo(5));
-```
-
-## Tables
-
-| Option | Description                                                               |
-| ------ | ------------------------------------------------------------------------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default.    |
-| ext    | extension to be used for dest files.                                      |
-
-Right aligned columns
-
-| Option | Description                                                               |
-| ------ | ------------------------------------------------------------------------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default.    |
-| ext    | extension to be used for dest files.                                      |
-
-## Links
-
-[link text](http://dev.nodeca.com)
-
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
-
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
-
-## Images
-
-![Minion](https://octodex.github.com/images/minion.png) ![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-
-Like links, Images also have a footnote style syntax
-
-![Alt text](https://octodex.github.com/images/dojocat.jpg "The Dojocat")
-
-With a reference later in the document defining the URL location:
-
-## Plugins
-
-The killer feature of `markdown-it` is very effective support of [syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
-
-### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
-
-> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
->
-> Shortcuts (emoticons): :-) :-( 8-) ;)
-
-see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
-
-### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
-
-* 19^th^
-* H\~2\~O
-
-### [<ins>](https://github.com/markdown-it/markdown-it-ins)
-
-++Inserted text++
-
-### [<mark>](https://github.com/markdown-it/markdown-it-mark)
-
-\==Marked text==
-
-### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
-
-Footnote 1 link\[^first].
-
-Footnote 2 link\[^second].
-
-Inline footnote^\[Text of inline footnote] definition.
-
-Duplicated footnote reference\[^second].
-
-\[^first]: Footnote **can have markup**
-
-```
-and multiple paragraphs.
-```
-
-\[^second]: Footnote text.
-
-### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
-
-Term 1
-
-:   Definition 1 with lazy continuation.
-
-Term 2 with *inline markup*
-
-:   Definition 2
-
-```
-    { some code, part of Definition 2 }
-
-Third paragraph of definition 2.
-```
-
-*Compact style:*
-
-Term 1   ~ Definition 1
-
-Term 2   \~ Definition 2a
-  \~ Definition 2b
-
-### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
-
-This is HTML abbreviation example.
-
-It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
-
-\*\[HTML]: Hyper Text Markup Language
-
-### [Custom containers](https://github.com/markdown-it/markdown-it-container)
-
-::: warning *here be dragons* :::
+1. チームとして工夫を行った点
+　 各担当者がどの作業を行っているかを把握するためにslackを活用し、綿密に連絡を取り合う
+ことでメンバーとの情報共有がはかどりました。
+　マークアップ作業を行った人が、そのページのバックエンド作業を行うことにした為、作業を
+スムーズに進めることができました。また、はじめにマークアップ作業をまとめ終わらせまし
+た。その為、作業を行いながら、フリマアプリの機能の詳細や、バックエンド開発のイメージを
+つかむことができました。また、商品のバックエンドとユーザーのバックエンドで共通する部分
+はチームと共有することで自分の担当する昨日に活かせることができました。
+
+---
+
+2. 個人として工夫を行った点
+　ウィザード形式のユーザー登録でsessionを利用した方法を用いユーザが登録できたのかでき
+なかったのかをわかりやすくするためにflashメッセージを活用しました。
+　トップページのスライドショーもライブラリを利用するなど使ったことのないライブラリを積
+極的に実装に取り入れました。
+　マークアップでは選択している項目に変化をつけるために色に変化をつけたりiconの大きさが
+変化するようにわかりやすさを意識して取り組みました。
+　本番環境の挙動確認の際、デプロイ処理を確実に行うためにコマンドをスムーズに実行できる
+よう自分用のメモをまとめ動作確認が手間取らないようにしました。
+
+#### 苦労した点
+
+1. ウィザード形式のユーザー登録で実装がうまくいかず考え込むことがありました。binding.pry
+を活用し、値が取れているかを検証し仮説をたて粘り強く行っていくうちに実装がなんとかでき
+ました。チームメンバーとの情報共有や、調べた資料を読み込む中で初めは理解が乏しかったも
+のが次第に理解ができていき、次の理解できていないところを何度も調べ読み込むうちに実装に
+近づいていきました。「仮説、検証、調べる、チームと情報共有」を繰り返すことで今までわか
+らなかったことがわかるようになり自分の成長に繋がりスキルが向上しました。コツコツと諦め
+ずに続け学んでいくうちに「覚えた」ではなく「理解できた」ことにより自分の知識に定着する
+ことを学びました。今後もコツコツと積み重ねて学び、スキルアップに繋げていきたいです。

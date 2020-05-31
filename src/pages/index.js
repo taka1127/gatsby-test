@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import PostLink from "../components/post-link"
 import HeroHeader from "../components/heroHeader"
 
+
 const IndexPage = ({
   data: {
     site,
@@ -46,7 +47,7 @@ export const pageQuery = graphql`
           id
           excerpt(pruneLength: 250)
           frontmatter {
-            date(formatString: "YYYY, MM, DD")
+            date(formatString: "YYYY/MM")
             path
             title
             thumbnail

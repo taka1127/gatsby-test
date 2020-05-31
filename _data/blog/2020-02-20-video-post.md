@@ -1,7 +1,7 @@
 ---
 template: BlogPost
 path: /video-post
-date: 2020-02-20T15:05:49.332Z
+date: 2020-05-20T15:05:49.332Z
 title: My Favorite Movies
 thumbnail: /assets/image-3.jpg
 ---
